@@ -17,9 +17,16 @@ def valid_move?(board, index)
   return valid
 end
 
-def move(board,position, player="X")
-  if valid_move?(board,position)
-    board[position] = player
+def move(board,index, player="X")
+  if valid_move?(board,index)
+    board[index] = player
   end
-
 end
+
+def turn(board)
+  puts "Please enter 1-9:"
+  user_input = gets.strip
+  index = input_to_index(user_input)
+  if valid_move?(board, index)
+    move(board,index)
+  end
