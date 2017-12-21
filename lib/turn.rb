@@ -18,5 +18,8 @@ def valid_move?(board, index)
 end
 
 def move(board,position, player="X")
+  if valid_move(board,position)
+    board[position] = player
+  end
 
 end
